@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "controller": "^1.0.0",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "mongoose": "^6.3.0"
+  }
+}
