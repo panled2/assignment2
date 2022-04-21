@@ -42,7 +42,7 @@ app.get("/deleteabook", bookController.getAllBooks, (req, res, next) => {
     });
 });
 app.post("/book/create", homeController.bookAdd);
-app.get("/bookDelete/:bookData", homeController.bookDelete);
+app.get("/book/:bookData", homeController.bookDelete);
 
 app.listen(app.get("port"), ()=>{
     console.log(`Server running at http://localhost:${app.get("port")}`);
