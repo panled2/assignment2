@@ -18,8 +18,11 @@ exports.addBook = (req, res) => {
 }
 
 exports.deleteBook = (req, res) => {
-    res.render("deleteabook")
-}
+    Books.find( {}, (err, info) => {
+    res.render("deleteabook", {book:info});
+    });
+};
+
 exports.bookAdd = (req, res) => {
     const book = new Books({
         name: req.body.name,
@@ -34,7 +37,7 @@ exports.bookAdd = (req, res) => {
 exports.bookDelete = (req, res, next) => {
     const bookData = req.params.bookData;
     console.log(bookData);
-    Book.findOneAndDelete({
+    Books.findOneAndDelete({
         bookTitle: bookData,
     }, function (err, docs) {
         if (err) {
