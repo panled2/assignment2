@@ -53,7 +53,7 @@ module.exports = {
         let bookId = req.params.id;
         books.findById(bookId)
             .then(book => {
-                res.render("books", {
+                res.render("book", {
                     data: book
                 })            
             })
