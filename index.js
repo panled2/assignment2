@@ -24,7 +24,7 @@ router = express.Router();
 app.use("/", router);
 
 router.get("/home", book_controller.index);
-router.get("/books/:id", book_controller.show);
+router.get("/book/:id", book_controller.show);
 router.get("/DeleteABook", book_controller.load_page);
 router.get("/addNewBook", book_controller.new);
 
