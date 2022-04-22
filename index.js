@@ -24,9 +24,9 @@ router = express.Router();
 app.use("/", router);
 
 router.get("/home", bookController.index);
-router.get("/book/:id", bookController.show);
+router.get("/book/:id", bookController.bookRequest);
 router.get("/DeleteABook", bookController.load_page);
-router.get("/addNewBook", bookController.new);
+router.get("/addNewBook", bookController.add);
 
 router.post("/new_books/create", bookController.create, bookController.redirectView);
 router.delete("/new_books/:bookId/delete", bookController.delete, bookController.redirectView);
@@ -38,5 +38,5 @@ app.use((req, res, next) => {
 });
 
 app.listen(app.get("port"), () => {
-    console.log(`The Express.js server has started and is listening on port number: ${app.get("port")}`);
+    console.log(`The server has started on port number: ${app.get("port")}`);
 })

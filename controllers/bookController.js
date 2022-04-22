@@ -25,7 +25,7 @@ module.exports = {
             res.redirect("/home");
         });
     },
-    new: (req, res) => {
+    add: (req, res) => {
         res.render("addNewBook");
     },
 
@@ -48,7 +48,7 @@ module.exports = {
             });
     },
 
-    show: (req,res, next) => {
+    bookRequest: (req,res, next) => {
         let bookId = req.params.id;
         books.findById(bookId)
             .then(book => {
