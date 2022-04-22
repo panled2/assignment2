@@ -44,7 +44,6 @@ module.exports = {
                 next(); 
             })
             .catch(error => {
-                console.log(`Error adding defined book: ${error.message}`);
                 next(error);
             });
     },
@@ -58,7 +57,6 @@ module.exports = {
                 })            
             })
             .catch(error => {
-                console.log(`error fetching book by name: ${error.message}`);
                 res.redirect ("/home");
             });
     },
