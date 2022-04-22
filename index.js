@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const book_controller = require('./controllers/book_controller');
+const bookController = require('./controllers/bookController');
 const bodyParser = require('body-parser');
 const methodOverride = require("method-override");
 require("dotenv").config();
@@ -23,13 +23,13 @@ app.use(express.static("public"));
 router = express.Router();
 app.use("/", router);
 
-router.get("/home", book_controller.index);
-router.get("/book/:id", book_controller.show);
-router.get("/DeleteABook", book_controller.load_page);
-router.get("/addNewBook", book_controller.new);
+router.get("/home", bookController.index);
+router.get("/book/:id", bookController.show);
+router.get("/DeleteABook", bookController.load_page);
+router.get("/addNewBook", bookController.new);
 
-router.post("/new_books/create", book_controller.create, book_controller.redirectView);
-router.delete("/new_books/:bookId/delete", book_controller.delete, book_controller.redirectView);
+router.post("/new_books/create", bookController.create, bookController.redirectView);
+router.delete("/new_books/:bookId/delete", bookController.delete, bookController.redirectView);
 
 
 app.use((req, res, next) => {
