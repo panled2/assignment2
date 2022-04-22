@@ -4,5 +4,5 @@ bookSchema = mongoose.Schema({
     author: String,
     web: String
 });
-const Books = mongoose.model("bookSc", bookSchema);
+const Books = mongoose.model("Books", bookSchema);
 module.exports= Books;

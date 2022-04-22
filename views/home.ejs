@@ -9,10 +9,10 @@
 </br>
 <table>
     <% let i = 0 %>
-    <% book.forEach (book => {%>
+    <% data.forEach (data => {%>
         <% i++ %>
         <tr>
-            <td><a href="book/<%= i %>"><%= book.name%></a></td>
+            <td><a href="<%=`/book/${data._name}` %>"><%= data.name%></a></td>
         </tr>
     <% }); %>
 </table>
